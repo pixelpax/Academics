@@ -1,0 +1,60 @@
+\documentclass[a4paper,12pt]{article}
+\author{Gabriel Elkind}
+\title{COMP312 - Assignment 2}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+
+\item Show how to multiply the complex numbers $a + bi$ and $c + di$ using only three
+multiplications of real numbers.
+    
+
+\item Give asymptotic upper and lower bounds for $T(n)$ in each of the following recur-
+rences.
+\begin{enumerate}
+    \item $T(n)=4T(n/3)+n \lg n$
+    \item(c) $T(n)=4T(n/2)+n^2\sqrt{n}$
+    \item(f) $T(n)=T(n/2)+T(n/4)+T(n/8)+n$
+    \item(h) $T(n)=T(n-1)+\lg n$ 
+\end{enumerate}
+
+\item Let $X[1...n]$ and $Y[1...n]$ be two arrays, each containing $n$ numbers already in sorted order. Give an $O(\lg n)$-time algorithm to find the median of all $2n$ elements in arrays $X$ and $Y$ 
+
+\item Express the running time (as a function of the length of y only, i.e., assume that x is fixed for this analysis and compute the asymptotic running time as the length of y increases) of the following pseudo-code algorithm as a recurrence and solve it. What does the algorithm do?
+
+\begin{verbatim}
+    M(x,y):
+    if y=0 return 0 else
+    return M(2x,floorof(y/2))+x(ymod2)
+\end{verbatim}
+
+\item
+\begin{verbatim}
+    Stooge-sort(A,i,j)
+    begin
+        if A[i] > A[j] then
+            swap A[i] and A[j]
+        if i + 1 >= j then
+            return k = floor((j - i + 1)/3)
+        Stooge-sort(A,i,j-k)    Comment: Sort first two-thirds.
+        Stooge-sort(A,i+k,j)    Comment: Sort last two-thirds.
+        Stooge-sort(A,i,j-k)    Comment:Sort first two-thirds again!
+\end{verbatim}
+\begin{enumerate}
+    \item Give an informal but convincing explanation (not a rigorous proof by induction) of why the approach of sorting the first two-thirds of the array, then sorting the last two-thirds of the array, and then sorting again the first two-thirds of the array yields a sorted array.
+    \item Find a recurrence for the worst-case running time of Stooge-sort.
+    \item Next, solve the recurrence using the recursion-tree method. 
+    \item How does the worst-case running time of Stooge-Sort compare with the worst- case running times of other sorting algorithms (Insertion sort, Selection sort, Mergesort, Quicksort, Bubblesort, Heapsort)?
+
+
+
+\end{enumerate}
+
+\end{enumerate}
+
+\end{document}
+
